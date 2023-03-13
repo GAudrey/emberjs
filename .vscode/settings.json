@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "css.validate": false,
+  "[javascript]": {
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnSave": false
+  },
+  "[handlebars]": {
+    "editor.bracketPairColorization.enabled": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.format.enable": true,
+  "eslint.workingDirectories": ["."],
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "Handlebars": "html"
+  }
+}
