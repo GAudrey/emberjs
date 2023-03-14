@@ -7,6 +7,10 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('bands', function () {});
+  this.route('bands', function () {
+    this.route('band', { path: ':band_id' }, function () {
+      this.route('songs');
+    });
+  });
   this.route('songs');
 });

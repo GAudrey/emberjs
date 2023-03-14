@@ -1,0 +1,13 @@
+{{page-title "Songs"}}
+<div class="w-96">
+  <h2>Les musiques de <span class="text-blue-500">{{this.model.name}}</span></h2>
+  {{#each this.model.songs as |song|}}
+  <div class="flex justify-between">
+    <div>
+      {{song.title}}
+      <span class="text-sm text-teal-200">by {{song.band.name}}</span>
+    </div>
+  <span>{{song.rating}}</span>
+  </div>
+  {{/each}}
+</div>
