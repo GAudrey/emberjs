@@ -9,6 +9,19 @@
       </div>
     </div>
   {{/each}}
+  {{#if this.isAddingBand}}
+    <form class="flex mt-2" {{on "submit" this.addBand}} {{on "reset" this.cancelBand}}>
+      <Input @type="text" placeholder="Nouveau groupe" @value={{this.selectBand.name}}/>
+      <button type="submit" class="ml-4 btnPrimary disabled:opacity-50" disabled={{this.isAddButtonDisabled}}>Ajouter</button>
+      <button type="reset" class="ml-4 btnSecondary">Annuler</button>
+    </form>
+  {{else}}
+    <button type="button" class="btnIcon" {{on "click" this.addingBand}}>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    Ajouter un groupe</button>
+  {{/if}}
 </div>
 <div class="ml-8">
   {{outlet}}
