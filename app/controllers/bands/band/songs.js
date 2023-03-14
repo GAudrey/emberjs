@@ -12,7 +12,7 @@ export default class BandsBandSongsController extends Controller {
     title: '',
   };
 
-  @computed('selectSong.title.{lenght,length}')
+  @computed('selectSong.title.length')
   get isAddingButtonDisabled() {
     return this.selectSong.title.length < 3;
   }
