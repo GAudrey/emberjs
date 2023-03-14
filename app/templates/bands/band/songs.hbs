@@ -10,4 +10,17 @@
   <span>{{song.rating}}</span>
   </div>
   {{/each}}
+  {{#if this.isAddingSong}}
+    <form class="flex mt-2" {{on "submit" this.addSong}} {{on "reset" this.cancelSong}}>
+      <Input @type="text" placeholder="Nouveau morceau" @value={{this.selectSong.title}}/>
+      <button type="submit" class="ml-4 btnPrimary disabled:opacity-50" disabled={{this.isAddButtonDisabled}}>Ajouter</button>
+      <button type="reset" class="ml-4 btnSecondary">Annuler</button>
+    </form>
+  {{else}}
+    <button type="button" class="btnIcon" {{on "click" this.addingSong}}>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    Ajouter un morceau</button>
+  {{/if}}
 </div>
