@@ -6,6 +6,7 @@ import { inject as service } from '@ember/service';
 
 export default class BandsController extends Controller {
   @service store;
+  @service router;
 
   @tracked isAddingBand = false;
   @tracked selectBand = {
@@ -27,6 +28,8 @@ export default class BandsController extends Controller {
     this.isAddingBand = false;
     let record = this.store.createRecord('band', this.selectBand);
     await record.save();
+
+    this.router.transitionTo('bands.band.songs', record.id);
 
     this.selectBand = {
       name: '',
