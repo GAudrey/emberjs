@@ -7,7 +7,7 @@
       {{song.title}}
       <span class="text-sm text-teal-200">by {{song.band.name}}</span>
     </div>
-    {{!-- convention d'écriture, ne peut pas être changé --}}
+    {{!-- StarRating -> convention d'écriture, ne peut pas être changé --}}
     <div class="flex"><StarRating @rating={{song.rating}} @song={{song}} @updateSongRating={{this.updateSongRating}} class="text-red-500"/></div>
   </div>
   {{/each}}
