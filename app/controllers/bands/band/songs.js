@@ -40,4 +40,10 @@ export default class BandsBandSongsController extends Controller {
   cancelSong() {
     this.addingSong = false;
   }
+  @action
+  updateSongRating(params) {
+    const { song, rating } = params;
+    song.set('rating', rating);
+    song.save();
+  }
 }
