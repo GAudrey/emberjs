@@ -1,6 +1,8 @@
 {{page-title "Band"}}
-<div class="flex mx-10 mt-4">
-  <LinkTo @route="bands.band.detail" @activeClass="border-b-2 border-teal-600" class="pb-1">Detail</LinkTo>
-  <LinkTo @route="bands.band.songs" @activeClass="border-b-2 border-teal-600" class="pb-1 ml-6">Songs</LinkTo>
-</div>
+<div class="flex flex-col w-full">
+  <div class="flex mb-4">
+    <LinkTo @route="bands.band.detail" @activeClass="border-b-2 border-teal-600" class="pb-1">Detail</LinkTo>
+    <LinkTo @route="bands.band.songs" @activeClass="border-b-2 border-teal-600" class="pb-1 ml-6">Songs</LinkTo>
+  </div>
 {{outlet}}
+</div>

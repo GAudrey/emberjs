@@ -1,5 +1,4 @@
 {{page-title "Detail"}}
-<div class="my-4 border-white border-2">
-  <p class="m-3">{{this.model.description}}</p>
-  <button type="submit" class="btnPrimary mx-3 my-4">Editer</button>
+<div class="w-3/4 border-white border-2 p-8">
+  <DetailBand @description={{this.model.description}} @band={{this.model}} />
 </div>
