@@ -7,10 +7,17 @@ export default class SongsController extends Controller {
 
   @action
   deleteSong(song) {
+    if (this.favoritesSong.items.includes(song)) {
+      this.favoritesSong.delete(song);
+    }
     song.destroyRecord();
   }
   @action
-  addFavorite(song) {
-    this.favoritesSong.add(song);
+  toggleFavorite(song) {
+    if (this.favoritesSong.items.includes(song)) {
+      this.favoritesSong.delete(song);
+    } else {
+      this.favoritesSong.add(song);
+    }
   }
 }
