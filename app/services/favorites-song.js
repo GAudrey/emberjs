@@ -7,4 +7,7 @@ export default class FavoritesSongService extends Service {
   add(item) {
     this.items.pushObject(item);
   }
+  delete(item) {
+    this.items.removeObject(item);
+  }
 }
